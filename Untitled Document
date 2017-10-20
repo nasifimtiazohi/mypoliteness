@@ -1,0 +1,34 @@
+Text:  Have you found the answer for your question? If yes would you please share it?
+	P(polite) = 0.719
+	P(impolite) = 0.281
+
+
+====================
+Text:  Sorry :) I dont want to hack the system!! :) is there another way?
+	P(polite) = 0.640
+	P(impolite) = 0.360
+
+
+====================
+Text:  What are you trying to do?  Why can't you just store the "Range"?
+	P(polite) = 0.034
+	P(impolite) = 0.966
+
+
+====================
+Text:  This was supposed to have been moved to &lt;url&gt; per the cfd. why wasn't it moved?
+	P(polite) = 0.068
+	P(impolite) = 0.932
+
+
+====================
+Text:  That's fine for now. I may merge them if I get some time.
+	P(polite) = 0.590
+	P(impolite) = 0.410
+
+
+====================
+Text:  Do not add a newline between if() and  the following statement. Check framework code about it. @rawtaz Check Yii source code about newlines. There is no Symfony/Zend/other code style.
+	P(polite) = 0.709
+	P(impolite) = 0.291
+

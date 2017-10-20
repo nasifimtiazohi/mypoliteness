@@ -67,7 +67,7 @@ def score(request):
     """
     :param request - The request document to score
     :type request - dict with 'sentences' and 'parses' field
-        sample (taken from testsample.py)--
+        sample (taken from test2.py)--
         {
             'sentences': [
                 "Have you found the answer for your question?", 
@@ -102,8 +102,15 @@ if __name__ == "__main__":
     """
     Sample classification of requests
     """
-
-    from testsample import TEST_DOCUMENTS
+    import cPickle
+    import openpyxl
+    count=2
+    wb=openpyxl.load_workbook('politeResult.xlsx')
+    ws=wb.get_active_sheet()
+    #from test2 import TEST_DOCUMENTS
+    f=open("dump.p","rb")
+    TEST_DOCUMENTS=cPickle.load(f)
+    f.close()
 
     for doc in TEST_DOCUMENTS:
 
@@ -114,6 +121,10 @@ if __name__ == "__main__":
         print "\tP(polite) = %.3f" % probs['polite']
         print "\tP(impolite) = %.3f" % probs['impolite']
         print "\n"
-        
+        ws['A'+str(count)]=doc['text']
+        ws['B'+str(count)]=probs['polite']
+        ws['C'+str(count)]=probs['impolite']
+        count+=1
+    wb.save('politeResult.xlsx')
 
 
